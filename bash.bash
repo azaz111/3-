@@ -26,16 +26,12 @@ unzip AutoRclone.zip -d /root/AutoRclone
 sleep 7
 cd
 chmod 777 trans.sh
-chmod 777 Copi1
-chmod 777 Copi
+chmod 777 Copi1.sh
+chmod 777 Copi.sh
 mkdir /aws32 
 screen -dmS mount rclone mount --daemon aws32: /aws32 
 mkdir /baws32 
 screen -dmS mount rclone mount --daemon baws32: /baws32 
-mkdir /disk4/osnova
-mkdir /disk4/osnova1
-mkdir /disk4/beckup
-mkdir /disk4/beckup1
 # Четвкртый --------------------------------------------------
 cd
 # Монтируем диск 1
@@ -63,6 +59,14 @@ partprobe /dev/nvme4n1
 mkdir /disk4
 mount /dev/nvme3n1 /disk4
 # Создаем дериктории на дисках
+cd /disk4
+mkdir osnova
+cd /disk4
+mkdir /osnova1
+cd /disk4 
+mkdir beckup
+cd /disk4 
+mkdir beckup1
 cd /disk1
 mkdir vid1 
 cd /disk2

@@ -20,14 +20,20 @@ sleep 2
 # Третий этап -----------------------------------------------------
 cd 
 mkdir AutoRclone
-git clone https://github.com/azaz111/3.git
-cd 3
+git clone https://github.com/azaz111/1.git
+cd 1
 unzip AutoRclone.zip -d /root/AutoRclone
 sleep 7
 cd
 chmod 777 trans.sh
 mkdir /aws32 
 screen -dmS mount rclone mount --daemon aws32: /aws32 
+mkdir /baws32 
+screen -dmS mount rclone mount --daemon baws32: /baws32 
+mkdir /disk4/osnova
+mkdir /disk4/osnova1
+mkdir /disk4/beckup
+mkdir /disk4/beckup1
 # Четвкртый --------------------------------------------------
 cd
 # Монтируем диск 1

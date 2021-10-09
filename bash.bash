@@ -1,9 +1,17 @@
-# !/bin/bash
-echo "Hello world"
+#!/bin/bash
+echo -n 'VVEDI NOMER : '
+read int 
+echo "$int" > aknomber.txt 
 sleep 2
 echo "Подождали"
 sudo apt-get update 
-sudo apt-get upgrade -y 
+# cozdadum skript avtootveta
+echo -e '#!/usr/bin/expect\nspawn sudo apt-get upgrade -y \nexpect "Package configuration"'> /root/autootvet.sh
+echo 'send "111\r"' >> /root/autootvet.sh
+echo 'expect -re "# $"' >> /root/autootvet.sh
+chmod 777 autootvet.sh
+./autootvet.sh 
+# ------------
 sudo apt install git -y 
 apt-get install -y python3 python3-pip 
 apt install unzip 
@@ -12,7 +20,7 @@ sleep 3
 # Второй этап-----------------------------------------------
 sudo apt install python3-pip
 sudo apt update
-sudo apt install curl
+sudo apt install curl -y
 sudo apt-get install screen git 
 curl https://rclone.org/install.sh | sudo bash 
 sudo pip3 install -r requirements.txt
